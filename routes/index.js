@@ -15,24 +15,28 @@ router.use(morgan('common'));
 router.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 
-
+//Get All
 router.get('/books', (req, res) => {
-  book
+  
+    book
     .find()
     .then(books => {
-      //res.json(books.map(book => book.apiRepr()));
-      var allBooks = res.json(books.map(book => book.apiRepr())); 
-      if(books === undefined || books.length == 0){
-        res.json({test: "testing"});
+      if(books.length < 1 || books == undefined ){
+        books = appdata.books;
+        res.json(books);
       } else {
         res.json(books.map(book => book.apiRepr()));
       }
-      //console.log(res);
+      
     })
     .catch(err => {
       console.error(err);
       res.status(500).json({error: 'something went terribly wrong'});
-    }); 
+    });
+  
+    
+  
+  
 });
 
 router.get('/allspeakers', (req, res) => {
