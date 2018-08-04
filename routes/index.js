@@ -34,8 +34,16 @@ router.get('/books', (req, res) => {
       res.status(500).json({error: 'something went terribly wrong'});
     });
   
-    
-  
+});
+
+
+/* GET speakers detail page */
+router.get('/books/:bookid', function(req, res) {
+  res.render('book', {
+    title: appdata.books[req.params.bookid].title,
+    author: appdata.books[req.params.bookid].author,
+    content: appdata.books[req.params.bookid].content
+  });
   
 });
 
