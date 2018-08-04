@@ -1,0 +1,9 @@
+{
+    "date": "Thursday, March 27th",
+    "time": "6-9pm",
+    "where": {
+        "name": "Hotel Gwendoline",
+        "img": "/images/misc/hotel_gwendoline.jpg",
+        "address": "123 Elm Street"
+    }
+}
