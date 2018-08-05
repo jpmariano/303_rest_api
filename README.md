@@ -1,6 +1,6 @@
 # Project Title
 
-One Paragraph of project description goes here
+303 Software Code Assessment
 
 ## Directions
 ```npm install```
@@ -11,5 +11,5 @@ One Paragraph of project description goes here
 * All Books URL http://localhost:3000/ or http://localhost:3000/books
 * One Book URL http://localhost:3000/books/1
 
-Sidenote: Something went wrong to my database connection. Not able to fix the connection in timely manner.
+Sidenote: Database is connected. Mongoose not able to find data.
 
