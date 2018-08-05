@@ -36,7 +36,7 @@ router.get('/books', (req, res) => {
 });
 
 
-/* GET speakers detail page */
+/* GET one book by id */
 router.get('/books/:bookid', function(req, res) {
   
   res.render('book', {
