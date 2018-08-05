@@ -22,7 +22,6 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.locals.appdata = require('./data.json');
 app.use('/', routes);
 
 /// catch 404 and forwarding to error handler
@@ -65,7 +64,7 @@ let server;
 // this function connects to our database, then starts the server
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
   return new Promise((resolve, reject) => {
-    mongoose.connect(databaseUrl, err => {
+    mongoose.connect(databaseUrl, {useMongoClient: true}, err => {
       if (err) {
         return reject(err);
       }

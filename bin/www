@@ -2,8 +2,9 @@
 var debug = require('debug')('my-application');
 var apps = require('../app');
 var app = apps; 
-//var dbServeropen = apps.runServer;
-//var dbServerclosed = apps.closeServer;
+var dbServeropen = apps.runServer;
+var dbServerclosed = apps.closeServer;
+// dbServerclosed();
 /*
 const {PORT} = require('./config');
 

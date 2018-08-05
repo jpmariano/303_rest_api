@@ -1,21 +1,22 @@
 const mongoose = require('mongoose');
 
-const booksSchema = mongoose.Schema({
-  title: {type: String, required: true},
-  author: {type: String},
-  content: {type: String}
+const Schema = mongoose.Schema;
+
+const booksSchema = new Schema({
+  title: {
+    type: String, 
+    required: true
+  },
+  author: {
+    type: String
+  },
+  content: {
+    type: String
+  }
 });
 
+const Books = mongoose.model('Books', booksSchema, 'book');
 
-booksSchema.methods.apiRepr = function() {
-  return {
-    id: this._id,
-    title: this.title,
-    author: this.author,
-    content: this.content
-  };
-}
-
-const books = mongoose.model('book', booksSchema);
-
-module.exports = {books};
+module.exports = {
+  Books
+};
