@@ -6,9 +6,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 var models = require('../model/models');
-var speaker = models.speakers;
 var book = models.books;
-var social = models.socials;
+//console.log(book);
 
 
 router.use(morgan('common'));
@@ -52,15 +51,20 @@ router.get('/books/:bookid', function(req, res) {
 
 /* GET home page. */
 router.get('/', function(req, res) {
+
   book
   .find()
   .then(books => {
+    //console.log(mongoose.models.book);
+    //res.json(books.map(book => book.apiRepr()));
+    
     if(books.length < 1 || books == undefined ){
       books = appdata.books;
       res.json(books);
+      
     } else {
       res.json(books.map(book => book.apiRepr()));
-    }
+    } 
     
   })
   .catch(err => {

@@ -16,6 +16,6 @@ booksSchema.methods.apiRepr = function() {
   };
 }
 
-const books = mongoose.model('books', booksSchema);
+const books = mongoose.model('book', booksSchema);
 
 module.exports = {books};
